@@ -1,0 +1,55 @@
+{% extends "resume/base.html" %}
+
+{% block title %}
+<title>Timothy Baeder - Resume</title>
+{% endblock %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/resume.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+  <div class="col-12 info">
+    <h1>{{ resume.person }}</h1>
+    <p>{{ resume.person.email }}</p>
+  </div>
+</div>
+
+{% if resume.objective %}
+<h3>Summary</h3>
+<div class="row">
+  <div class="col-12">
+    <p>{{resume.objective}}</p>
+  </div>
+</div>
+{% endif %}
+
+<h3>Experience</h3>
+<div class="row">
+{% for job in resume.job_set.all %}
+  <div class="job col-12 {% if forloop.first %}first{% endif %}">
+    <div class="row">
+      <div class="col-9 title">{{job.title}} at {{job.company}}</div>
+      <div class="col-3 right">{{job.get_dates}}</div>
+    </div>
+    <div class="row description">
+      <div class="col-12">{{job.description}}</div>
+      <div class="col-12 tools">Tools: {% for tool in job.tools.all %}<span class="badge badge-secondary">{{ tool }}</span>{% if not forloop.last %} {% endif %}{% endfor %}</div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+<h3>Education</h3>
+{% for education in resume.education_set.all %}
+<div class="row school">
+  <div class="col-6 school_name">{{education.college_name}}</div><div class="right col-6">Graduated {{education.get_honors}} in {{education.end_date}}</div>
+  <div class="col-12 degree">{{education.degree}} ({{education.gpa}} overall GPA)</div>
+  <div class="col-12 courses">Relevant Coursework: {% for course in education.classes.all %}<span class="badge badge-secondary">{{ course }}</span>{% if not forloop.last %} {% endif %}{% endfor %}</div>
+</div>
+{% endfor %}
+
+{% endblock %}

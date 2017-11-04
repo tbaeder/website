@@ -1,0 +1,46 @@
+.info {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.job {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.job::after {
+  content: '';
+  width: 96%;
+  margin-left: 2%;
+  border-bottom: solid 1px #000;
+  position: absolute;
+  left: 0;
+  bottom: 0rem;
+  z-index: 1;
+}
+
+.job.first {
+  padding-top: 1rem;
+}
+
+.job.first::before {
+  content: '';
+  width: 96%;
+  margin-left: 2%;
+  border-top: solid 1px #000;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  margin-top: -.75rem;
+}
+
+.description {
+  margin-top: .5rem;
+}
