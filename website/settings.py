@@ -25,7 +25,11 @@ SECRET_KEY = 'j5_#vb8q$)1xsxcxf%ti=5!fcv5+u48w^rrjtcblo_f-e!u#0('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "tbaeder.com",
+    "https://whispering-temple-94163.herokuapp.com/",
+    "0.0.0.0",
+]
 
 
 # Application definition
