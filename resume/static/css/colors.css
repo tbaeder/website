@@ -1,3 +1,30 @@
+body {
+  background-color: #eee;
+}
+
+.main {
+  background-color: #fff;
+  border-radius: 0px 0px 5px 5px;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nav {
+  border-bottom: 2px solid #000;
+}
+
+.nav-item {
+  padding: .5rem 0rem;
+}
+
+.nav-item:hover {
+  background-color: #eee;
+}
+
+.menu {
+  margin-bottom: 1rem;
+}
+
 .center {
   text-align: center;
 }
