@@ -1,0 +1,10 @@
+.message {
+  margin: .5rem 0;
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: .5rem;
+}
+
+.message p {
+  margin: 0;
+}
