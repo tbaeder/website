@@ -21,6 +21,14 @@ body {
   background-color: #eee;
 }
 
+.nav-link {
+  color: #333;
+}
+
+.nav-link:hover {
+  color: #666;
+}
+
 .menu {
   margin-bottom: 1rem;
 }
