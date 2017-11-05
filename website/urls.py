@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^projects/', projects, name="projects"),
     url(r'^home/$', home, name="home"),
     url(r'^resumes/(?P<id>\d*)$', resume, name="resume"),
+    url(r'^resumes/$', resume, name="resume"),
 ]
