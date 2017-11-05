@@ -2,17 +2,9 @@
   margin-top: 1rem;
 }
 
-.center {
-  text-align: center;
-}
-
 .contact,
 .location {
   margin: .25rem;
-}
-
-.right {
-  text-align: right;
 }
 
 .title {

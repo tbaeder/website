@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Timothy Baeder - Messages</title>
+{% endblock %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/messages.css' %}">
+{% endblock %}
+
+{% block scripts %}
+{% load static %}
+<script src="{% static 'js/messages.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="row">
+  <div class="col">
+    <h3>Messages</h3>
+  </div>
+</div>
+
+{% for message in message_list %}
+<div class="row message" data-id="{{message.id}}">
+  <div class="col-10">
+    <p>Title: {{message.title}}</p>
+    <p>From: {%if message.email %}{{message.email}}{% else %}Anonymous{% endif %}</p>
+    <p>{{message.message}}</p>
+  </div>
+  <div class="col-2 delete right">
+    <button class="btn btn-cancel delete-message">Delete</button>
+  </div>
+</div>
+{% empty %}
+<div class="row">
+  <div class="col">
+    <p> No messages :( </p>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

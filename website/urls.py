@@ -20,9 +20,11 @@ from resume.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^contact/', contact, name="contact"),
-    url(r'^projects/', projects, name="projects"),
+    url(r'^contactme/$', contact, name="contact"),
+    url(r'^projects/$', projects, name="projects"),
     url(r'^home/$', home, name="home"),
     url(r'^resumes/(?P<id>\d*)$', resume, name="resume"),
     url(r'^resumes/$', resume, name="resume"),
+    url(r'^messages/$', MessageListView.as_view(), name="messages"),
+    url(r'^messages/delete/$', delete_message, name="delete_message"),
 ]

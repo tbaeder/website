@@ -5,8 +5,18 @@
 {% endblock %}
 
 {% block content %}
-<h1>Welcome</h1>
-
-<p>This is where you can contact me.</p>
+{% if thanks %}
+<p>Thanks for sending me a message! I'll get back to you soon.</p>
+{% endif %}
+<form action="" method="post">
+      {% csrf_token %}
+      {% for field in contact_me_form %}
+      <div class="form-group">
+        {{field.label_tag}}
+        {{field}}
+      </div>
+      {% endfor %}
+      <button class="btn btn-primary" type="submit" value="Submit" />Submit</button>
+</form>
 
 {% endblock %}

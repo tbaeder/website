@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 class Company(models.Model):
     """
@@ -123,3 +124,9 @@ class Education(models.Model):
             return "%s (%s - %s)" % (self.college_name, self.start_date.strftime("%B, %Y"), self.end_date.strftime("%B, %Y"))
         else:
             return "%s (%s - Present)"  % (self.college_name, self.start_date.strftime("%B, %Y"))
+
+class Message(models.Model):
+    title = models.CharField(max_length=200)
+    email = models.EmailField(blank=True)
+    message = models.TextField(max_length=3000)
+    date_sent = models.DateField(blank=True,default=datetime.date.today())
