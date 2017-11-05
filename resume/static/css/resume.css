@@ -1,5 +1,14 @@
 .info {
+  margin-top: 1rem;
+}
+
+.center {
   text-align: center;
+}
+
+.contact,
+.location {
+  margin: .25rem;
 }
 
 .right {
@@ -43,4 +52,8 @@
 
 .description {
   margin-top: .5rem;
+}
+
+.school {
+  margin-bottom: 2rem;
 }

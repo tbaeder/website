@@ -14,11 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from django.views.generic import RedirectView
 from django.contrib import admin
+
+from resume.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^resume/', include('resume.urls')),
-    url(r'^$', RedirectView.as_view(url='/resume/', permanent=True)),
+    url(r'^contact/', contact, name="contact"),
+    url(r'^projects/', projects, name="projects"),
+    url(r'^home/$', home, name="home"),
+    url(r'^resumes/(?P<id>\d*)$', resume, name="resume"),
 ]

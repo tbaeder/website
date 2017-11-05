@@ -54,9 +54,20 @@ class Person(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     email = models.EmailField()
+    phone_number = models.CharField(max_length=10)
+    city = models.CharField(max_length=200, blank=True)
+    state = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return "%s %s" % (self.first_name, self.last_name)
+
+    def get_phone_number(self):
+        return "%s-%s-%s" % (self.phone_number[0:3], self.phone_number[3:6], self.phone_number[6:10])
+
+    def get_location(self):
+        if not self.city or not self.state:
+            return False
+        return "%s, %s" % (self.city, self.state)
 
 class Resume(models.Model):
     """
